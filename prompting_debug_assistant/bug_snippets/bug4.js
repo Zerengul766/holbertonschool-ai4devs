@@ -1,7 +1,7 @@
 async function getUserNames(url) {
 
-    const response = fetch(url);        // BUG: missing await
-    const data = response.json();       // BUG: missing await
+    const response = fetch(url);        
+    const data = response.json();       
     const names = data.map(user => user.name.toUpperCase());
     return names;
 }
