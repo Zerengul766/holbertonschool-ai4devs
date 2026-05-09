@@ -5,9 +5,9 @@
 **Notes**: Loop uses range(len(scores)+1), causing IndexError. Change to len(scores).
 
 ## Bug 2 – bug2.py
-**Intended Behavior**: Calculate total price with discount percentage applied.
-**Issue Type**: Logical error.
-**Notes**: discount_percent is used as-is (e.g. 20), but should be divided by 100. Result is incorrect.
+Intended Behavior: Calculate total price with discount percentage applied and print receipt.
+Issue Type: Logical error.
+Notes: discountPercent is used as-is (e.g. 20), but should be divided by 100 before multiplying. Result is heavily incorrect.
 
 ## Bug 3 – bug3.js
 **Intended Behavior**: Find the largest number in an array.
