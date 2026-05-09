@@ -18,7 +18,7 @@ Intended Behavior: Fetch product data and return titles in lowercase.
 Issue Type: Async/Await misuse.
 Notes: Missing await before fetch() and response.json(). Also getProductTitles() call missing await in printReport().
 
-Bug 5 – bug5.py
-Intended Behavior: Compute CSV averages and write to new CSV.
-Issue Type: Type mismatch.
-Notes: CSV values are strings. Convert to float() before sum(). Use with-blocks for file handling.
+Bug 5 – bug5.c
+Intended Behavior: Calculate average score from a list of string values and print the result.
+Issue Type: Misuse of data types.
+Notes: scores array contains strings (char[]), but code adds them directly as numbers. Must use atof() to convert strings to double before arithmetic.
