@@ -4,7 +4,7 @@
 **Issue Type**: Off-by-one error.
 **Notes**: Loop uses range(len(scores)+1), causing IndexError. Change to len(scores).
 
-## Bug 2 – bug2.py
+## Bug 2 – bug2.js
 Intended Behavior: Calculate total price with discount percentage applied and print receipt.
 Issue Type: Logical error.
 Notes: discountPercent is used as-is (e.g. 20), but should be divided by 100 before multiplying. Result is heavily incorrect.
