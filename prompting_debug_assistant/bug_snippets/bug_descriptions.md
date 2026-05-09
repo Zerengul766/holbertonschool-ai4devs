@@ -7,7 +7,7 @@
 ## Bug 2 – bug2.js
 Intended Behavior: Calculate total price with discount percentage applied and print receipt.
 Issue Type: Logical error.
-Notes: discountPercent is used as-is (e.g. 20), but should be divided by 100 before multiplying. Result is heavily incorrect.
+Notes: discount_percent is used as-is (e.g. 20), but should be divided by 100.0 before multiplying. Result is heavily incorrect.
 
 ## Bug 3 – bug3.js
 **Intended Behavior**: Find the largest number in an array.
