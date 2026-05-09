@@ -4,10 +4,10 @@
 **Issue Type**: Off-by-one error.
 **Notes**: Loop uses range(len(scores)+1), causing IndexError. Change to len(scores).
 
-## Bug 2 – bug2.c
-Intended Behavior: Calculate total price with discount percentage applied and print receipt.
-Issue Type: Logical error.
-Notes: discount_percent is used as-is (e.g. 20), but should be divided by 100.0 before multiplying. Result is heavily incorrect.
+Bug 2 – bug2.java
+Intended Behavior: Calculate average score from string array and print student report.
+Issue Type: Misuse of data types.
+Notes: scores array contains Strings, but code adds them directly as numbers. Must use Integer.parseInt() to convert strings to int before arithmetic.
 
 ## Bug 3 – bug3.js
 **Intended Behavior**: Find the largest number in an array.
