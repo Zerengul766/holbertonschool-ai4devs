@@ -1,4 +1,11 @@
-def last_items(items, n):
-    return items[len(items)-n:len(items)+1]  # BUG
+def get_last_n(items, n):
+    result = []
+    start = len(items) - n
+    for i in range(start, len(items) + 1):
+        result.append(items[i])
+    return result
 
-print(last_items([1,2,3,4], 2))
+
+my_list = [10, 20, 30, 40, 50]
+print(get_last_n(my_list, 3))
+print(get_last_n(my_list, 5))

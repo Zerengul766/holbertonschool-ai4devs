@@ -1,26 +1,29 @@
-cat > bug_descriptions.md << 'EOF'
 ## Bug 1 – bug1.py
-**Intended Behavior**: Return the last n items of a list.
+
+**Intended Behavior**: Return a list with the last n elements.
 **Issue Type**: Off-by-one error.
-**Notes**: `len(items)+1` in the slice goes out of bounds.
+**Notes**: Loop uses len(items)+1. Change to len(items).
 
 ## Bug 2 – bug2.py
-**Intended Behavior**: Divide two numbers and return the result.
-**Issue Type**: Runtime exception.
-**Notes**: Division by zero causes a crash when b=0.
+
+**Intended Behavior**: Calculate factorial of n (factorial(0)=1).
+**Issue Type**: Logical error.
+**Notes**: Starts at 0; excludes n. Set result=1 and use range(1, n+1).
 
 ## Bug 3 – bug3.js
-**Intended Behavior**: Sum all elements in an array.
-**Issue Type**: Loop logic error.
-**Notes**: `i <= arr.length` goes one index too far, accessing undefined.
+
+**Intended Behavior**: Return mean of numbers rounded to 2 decimal places.
+**Issue Type**: Logic error.
+**Notes**: NaN passes filter. Use Number.isNaN and initial value 0.
 
 ## Bug 4 – bug4.js
-**Intended Behavior**: Check if a number is even.
-**Issue Type**: Logical error.
-**Notes**: `n = 2` is assignment not comparison, should be `n % 2 === 0`.
+
+**Intended Behavior**: Fetch JSON and return names in uppercase.
+**Issue Type**: Async/Await error.
+**Notes**: Promises not awaited. Add await before fetch and json().
 
 ## Bug 5 – bug5.py
-**Intended Behavior**: Print each item in a list.
-**Issue Type**: Syntax error.
-**Notes**: Missing colon `:` after function definition `def print_items(lst)`.
-EOF
+
+**Intended Behavior**: Compute CSV averages and write to new CSV.
+**Issue Type**: Type mismatch.
+**Notes**: CSV values are strings. Convert to float() and use with-blocks.
