@@ -1,24 +1,28 @@
-import csv
+void print_items(char items[][50], int count) {
+    printf("Items in list:\n");
+    for (int i = 0; i < count; i++) {
+        printf("- %s\n", items[i]);
+    }
+    printf("-------------------\n");
+}
 
-def process_scores(input_path, output_path):
-    infile = open(input_path, "r")
-    reader = csv.reader(infile)
+double calculate_average(char scores[][10], int count) {
+    double total = 0;
+    for (int i = 0; i < count; i++) {
+        total += scores[i];
+    }
+    return total / count;
+}
 
-    results = []
-    for row in reader:
-        name = row[0]
-        scores = row[1:]
-        average = sum(scores) / len(scores)
-        results.append([name, average])
+int main() {
+    char names[][50] = {"Ali", "Leyla", "Murad", "Nigar"};
+    char scores[][10] = {"85", "90", "78", "92"};
+    int count = 4;
 
-    infile.close()
+    print_items(names, count);
 
-    outfile = open(output_path, "w")
-    writer = csv.writer(outfile)
-    writer.writerow(["Name", "Average"])
+    double avg = calculate_average(scores, count);
+    printf("Average score: %.2f\n", avg);
 
-    for result in results:
-        writer.writerow(result)
-
-
-process_scores("scores.csv", "averages.csv")
+    return 0;
+}
