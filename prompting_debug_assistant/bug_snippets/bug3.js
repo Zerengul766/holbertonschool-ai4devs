@@ -1,11 +1,45 @@
-function average(numbers) {
-    const valid = numbers.filter(n => typeof n === "number");
+function findLargestNumber(numbers) {
+    const largest = numbers.reduce((max, current) => {
+        if (current > max) {
+            return current;
+        }
 
-    const sum = valid.reduce((acc, n) => acc + n);
+        return max;
+    });
 
-    return (sum / valid.length).toFixed(2);
+    return largest;
 }
 
-console.log(average([1, 2, 3, 4, 5]));
-console.log(average([10, "hello", null, 20]));
-console.log(average([]));
+
+function printNumbers(numbers) {
+    console.log("Numbers in array:");
+
+    for (let i = 0; i < numbers.length; i++) {
+        console.log(numbers[i]);
+    }
+
+    console.log("----------------");
+}
+
+
+const firstArray = [4, 8, 15, 16, 23, 42];
+const secondArray = [100, 55, 78];
+const thirdArray = [];
+
+printNumbers(firstArray);
+console.log(
+    "Largest:",
+    findLargestNumber(firstArray)
+);
+
+printNumbers(secondArray);
+console.log(
+    "Largest:",
+    findLargestNumber(secondArray)
+);
+
+printNumbers(thirdArray);
+console.log(
+    "Largest:",
+    findLargestNumber(thirdArray)
+);
